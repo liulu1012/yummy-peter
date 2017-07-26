@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import Home from './ui/pages/Home/Home.js'
 import Signup from './ui/pages/Signup/Signup.js'
+import Login from './ui/pages/Login/Login.js'
 import Sidebar from './ui/shared/Sidebar/Sidebar.js'
 import Dashboard from './ui/pages/Dashboard/Dashboard.js'
 import {
@@ -24,6 +25,7 @@ class App extends React.Component{
             <Switch>
               <Route path='/' exact component={Home} />
               <Route path='/signup'  component={Signup} />
+              <Route path='/login' component={Login} />
               <Route path='/dashboard' component={Dashboard} />
             </Switch>
           </div>
