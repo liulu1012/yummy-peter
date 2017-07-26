@@ -6,12 +6,3 @@ h1,h2,h3,p{
   margin: 0;
 }
 a{text-decoration: none}
-
-form input{
-  border: 0;
-  outline: 0;
-}
-button{
-  border: 0;
-  outline: 0
-}
