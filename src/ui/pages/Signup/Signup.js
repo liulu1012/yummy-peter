@@ -16,6 +16,7 @@ class Signup extends React.Component{
       .then(res => {
         console.log(res.data)
         this.props.history.push('./dashboard')
+        this.props.dispatch({type:'SIGN_IN',username:res.data.username})
       })
       .catch(err => {
         console.log(err.response.data.msg)

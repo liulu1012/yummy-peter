@@ -1,11 +1,15 @@
 import React from 'react'
 import './alert-box.css'
 import {connect} from 'react-redux'
+import store from '../../../redux/store'
 
 class AlertBox extends React.Component{
   closeAlert = () => {
     console.log('...HIDE_ALERT')
     this.props.dispatch({type:'HIDE_ALERT'})
+  }
+  componentWillMount(){
+    console.log(store.getState())
   }
   render(){
     return(
@@ -24,8 +28,8 @@ class AlertBox extends React.Component{
 }
 
 const mapStateToProps = (state) => ({
-  showAlert : state.showAlert,
-  alertMsg : state.alertMsg
+  showAlert : state.app.showAlert,
+  alertMsg : state.app.alertMsg
 })
 
 export default connect(mapStateToProps)(AlertBox)

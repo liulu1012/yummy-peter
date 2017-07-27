@@ -1,6 +1,7 @@
 import React from 'react'
 import './sidebar.css'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
 import {slide as Menu} from 'react-burger-menu'
 
@@ -14,6 +15,7 @@ class Sidebar extends React.Component{
     })
   }
   render(){
+    console.log(this.props)
     return(
       <div className='sidebar'>
         <Menu isOpen={this.state.isOpen}>
@@ -21,7 +23,7 @@ class Sidebar extends React.Component{
             <img src='http://media.haoduoshipin.com/yummy/default-avatar.png' alt='userinfo' />
             <div className='bm-user-auth'>
               <Link to='' className='bm-user-left'>
-                lulu
+                {this.props.currentUser}
               </Link>
               <Link to='' className='bm-user-right'>
                 退出
@@ -41,4 +43,9 @@ class Sidebar extends React.Component{
   }
 }
 
-export default Sidebar
+const mapStateToProps = (state) => ({
+  currentUser : state.account.currentUser,
+  isAuthenticated : state.account.isAuthenticated
+})
+
+export default connect(mapStateToProps)(Sidebar)
