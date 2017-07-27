@@ -13,9 +13,21 @@ import {
 }from 'react-router-dom'
 import store from './redux/store.js'
 import {Provider} from 'react-redux'
+import axios from 'axios'
+import Settings from './settings'
 
 
 class App extends React.Component{
+  componentWillMount(){
+    let userId = localStorage.getItem('userId')
+    if(userId){
+      axios.get(`${Settings.host}/user/${userId}`)
+        .then(res => {
+          console.log('app componentWillMount',res.data)
+          store.dispatch({type:'SIGN_IN',username:res.data.user.username})
+        })
+    }
+  }
   render(){
     return(
       <Provider store={store}>

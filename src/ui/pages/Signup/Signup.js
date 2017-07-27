@@ -17,6 +17,7 @@ class Signup extends React.Component{
         // console.log(res.data)
         this.props.history.push('./dashboard')
         this.props.dispatch({type:'SIGN_IN',username:res.data.username})
+        localStorage.setItem('userId',res.data.userId)
       })
       .catch(err => {
         console.log(err.response.data.msg)
