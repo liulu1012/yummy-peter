@@ -11,28 +11,32 @@ import {
   Route,
   Switch
 }from 'react-router-dom'
+import store from './redux/store.js'
+import {Provider} from 'react-redux'
 
 
 class App extends React.Component{
   render(){
     return(
-      <div>
-        <AlertBox />
-        <Router>
-          <div>
-            <Route render={({location}) => {
-              return location.pathname !== '/' ?
-              (<Sidebar />): null
-            }} />
-            <Switch>
-              <Route path='/' exact component={Home} />
-              <Route path='/signup'  component={Signup} />
-              <Route path='/login' component={Login} />
-              <Route path='/dashboard' component={Dashboard} />
-            </Switch>
-          </div>
-        </Router>
-      </div>
+      <Provider store={store}>
+        <div>
+          <AlertBox />
+          <Router>
+            <div>
+              <Route render={({location}) => {
+                return location.pathname !== '/' ?
+                (<Sidebar />): null
+              }} />
+              <Switch>
+                <Route path='/' exact component={Home} />
+                <Route path='/signup'  component={Signup} />
+                <Route path='/login' component={Login} />
+                <Route path='/dashboard' component={Dashboard} />
+              </Switch>
+            </div>
+          </Router>
+        </div>
+      </Provider>
     )
   }
 }
