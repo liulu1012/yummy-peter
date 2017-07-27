@@ -5,6 +5,7 @@ import Signup from './ui/pages/Signup/Signup.js'
 import Login from './ui/pages/Login/Login.js'
 import Sidebar from './ui/shared/Sidebar/Sidebar.js'
 import Dashboard from './ui/pages/Dashboard/Dashboard.js'
+import AlertBox from './ui/shared/AlertBox/AlertBox'
 import {
   BrowserRouter as Router,
   Route,
@@ -16,6 +17,7 @@ class App extends React.Component{
   render(){
     return(
       <div>
+        <AlertBox />
         <Router>
           <div>
             <Route render={({location}) => {
