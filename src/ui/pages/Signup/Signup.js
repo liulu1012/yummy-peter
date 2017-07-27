@@ -8,12 +8,15 @@ import Settings from '../../../settings.js'
 class Signup extends React.Component{
   signup = (e) => {
     e.preventDefault()
-    let data = {
-      username:'xxx',
-      password:'222'
-    }
+    let username = this.usernameInput.value
+    let password = this.passwordInput.value
+    let data = {username,password}
     axios.post(`${Settings.host}/user/signup`,data)
-      .then(res => console.log(res.data))
+      .then(res => {
+        console.log(res.data)
+        this.props.history.push('./dashboard')
+      })
+      .catch(err => console.log(err.response.data.msg))
   }
   render(){
     return(
@@ -31,9 +34,9 @@ class Signup extends React.Component{
           <form className='signup-form' onSubmit={this.signup}>
             <div className='signup-text-inputs'>
               <div className='signup-text-inputs-inner'>
-                <input type='text' placeholder='用户名'/>
+                <input type='text' placeholder='用户名' ref={value=>this.usernameInput=value}/>
                 <input type='text' placeholder='Email'/>
-                <input type='password' placeholder='密码'/>
+                <input type='password' placeholder='密码' ref={value=>this.passwordInput=value}/>
                 <input type='password' placeholder='再次输入密码'/>
               </div>
             </div>
