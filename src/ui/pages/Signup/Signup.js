@@ -4,6 +4,7 @@ import './signup.css'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import Settings from '../../../settings.js'
+import {connect} from 'react-redux'
 
 class Signup extends React.Component{
   signup = (e) => {
@@ -16,7 +17,10 @@ class Signup extends React.Component{
         console.log(res.data)
         this.props.history.push('./dashboard')
       })
-      .catch(err => console.log(err.response.data.msg))
+      .catch(err => {
+        console.log(err.response.data.msg)
+        this.props.dispatch({type:'SHOW_ALERT',msg:err.response.data.msg})
+      })
   }
   render(){
     return(
@@ -53,4 +57,4 @@ class Signup extends React.Component{
   }
 }
 
-export default Signup
+export default connect(null)(Signup)
