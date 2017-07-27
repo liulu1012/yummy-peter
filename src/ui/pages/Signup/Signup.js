@@ -14,7 +14,7 @@ class Signup extends React.Component{
     let data = {username,password}
     axios.post(`${Settings.host}/user/signup`,data)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         this.props.history.push('./dashboard')
         this.props.dispatch({type:'SIGN_IN',username:res.data.username})
       })

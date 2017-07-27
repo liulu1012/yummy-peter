@@ -15,19 +15,27 @@ class Sidebar extends React.Component{
     })
   }
   render(){
-    console.log(this.props)
+    // console.log(this.props)
+    let authStr = (
+      <div>登陆|注册</div>
+    )
+    let userinfo = (
+      <div>
+        <Link to='' className='bm-user-left'>
+          {this.props.currentUser}
+        </Link>
+        <Link to='' className='bm-user-right'>
+          退出
+        </Link>
+      </div>
+    )
     return(
       <div className='sidebar'>
         <Menu isOpen={this.state.isOpen}>
           <div className='bm-user-info'>
             <img src='http://media.haoduoshipin.com/yummy/default-avatar.png' alt='userinfo' />
             <div className='bm-user-auth'>
-              <Link to='' className='bm-user-left'>
-                {this.props.currentUser}
-              </Link>
-              <Link to='' className='bm-user-right'>
-                退出
-              </Link>
+              {this.props.isAuthenticated ? userinfo : authStr}
             </div>
           </div>
           <div className='bm-link-list'>

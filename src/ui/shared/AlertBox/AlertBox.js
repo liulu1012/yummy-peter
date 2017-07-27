@@ -1,16 +1,16 @@
 import React from 'react'
 import './alert-box.css'
 import {connect} from 'react-redux'
-import store from '../../../redux/store'
+
 
 class AlertBox extends React.Component{
   closeAlert = () => {
     console.log('...HIDE_ALERT')
     this.props.dispatch({type:'HIDE_ALERT'})
   }
-  componentWillMount(){
-    console.log(store.getState())
-  }
+  // componentWillMount(){
+  //   // console.log(store.getState())
+  // }
   render(){
     return(
       <div className={this.props.showAlert ?'alert-box show' : 'alert-box'}>
