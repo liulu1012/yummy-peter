@@ -14,6 +14,10 @@ class Sidebar extends React.Component{
       isOpen:false
     })
   }
+  logout = () => {
+    localStorage.removeItem('userId')
+    this.props.dispatch({type:'LOG_OUT'})
+  }
   render(){
     // console.log(this.props)
     let authStr = (
@@ -24,7 +28,7 @@ class Sidebar extends React.Component{
         <Link to='' className='bm-user-left'>
           {this.props.currentUser}
         </Link>
-        <Link to='' className='bm-user-right'>
+        <Link to='' className='bm-user-right' onClick={this.logout}>
           退出
         </Link>
       </div>
