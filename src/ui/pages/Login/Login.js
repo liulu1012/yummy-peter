@@ -7,7 +7,7 @@ import Settings from '../../../settings.js'
 import {connect} from 'react-redux'
 
 class Login extends React.Component{
-  signup = (e) => {
+  login = (e) => {
     e.preventDefault()
     let username = this.usernameInput.value
     let password = this.passwordInput.value
@@ -40,7 +40,7 @@ class Login extends React.Component{
               连接小而确定的幸福
             </p>
           </div>
-          <form className='signup-form' onSubmit={this.signup}>
+          <form className='signup-form' onSubmit={this.login}>
             <div className='signup-text-inputs'>
               <div className='signup-text-inputs-inner'>
                 <input type='text' placeholder='用户名' ref={value=>this.usernameInput=value}/>
