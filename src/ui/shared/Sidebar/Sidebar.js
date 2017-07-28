@@ -21,7 +21,14 @@ class Sidebar extends React.Component{
   render(){
     // console.log(this.props)
     let authStr = (
-      <div>登陆|注册</div>
+      <div>
+        <Link to='/signup' onClick={this.closeBmMenu} className='bm-user-left'>
+          注册
+        </Link>
+        <Link to='/login' onClick={this.closeBmMenu} className='bm-user-right'>
+          登录
+        </Link>
+      </div>
     )
     let userinfo = (
       <div>
