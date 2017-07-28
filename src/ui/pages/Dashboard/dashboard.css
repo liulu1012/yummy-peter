@@ -1,0 +1,16 @@
+.dashboard{
+
+}
+
+.dashboard .feed-wrap{
+	background-color: #F9FAFB;
+	border: 2px solid blue;
+	min-height: 400px;
+}
+
+.dashboard .feed-item{
+	min-height: 200px;
+	margin: 20px;
+	background: #FFFFFF;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.21)
+}
