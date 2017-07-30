@@ -1,5 +1,11 @@
 import React from 'react'
 
-const Dashboard = () => <h1>Dashboard</h1>
+class Dashboard extends React.Component{
+  render(){
+    return(
+      <div>Dashboard</div>
+    )
+  }
+}
 
 export default Dashboard
