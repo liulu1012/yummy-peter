@@ -1,0 +1,52 @@
+.profile{
+  height: 100vh;
+}
+.profile-wrap{
+  display: flex;
+  justify-content: space-between;
+  min-height: 100px;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+  border: 1px solid red;
+}
+.profile-wrap>*{
+  border: 2px solid blue
+}
+.profile-user{
+  display: flex;
+}
+.profile-user img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.profile-edit img{
+  width: 20px;
+  height: 20px;
+}
+
+.profile-attention-wrap{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-around;
+  background-color: gray;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.profile-attention-card{
+  height: 100px;
+  border: 1px solid red;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.profile-attention-card img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
