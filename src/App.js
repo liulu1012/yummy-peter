@@ -15,6 +15,9 @@ import store from './redux/store.js'
 import {Provider} from 'react-redux'
 import axios from 'axios'
 import Settings from './settings'
+import Dish from './ui/pages/Dish/Dish.js'
+import Cart from './ui/pages/Cart/Cart.js'
+import Profile from './ui/pages/Profile/Profile.js'
 
 
 class App extends React.Component{
@@ -44,6 +47,9 @@ class App extends React.Component{
                 <Route path='/signup'  component={Signup} />
                 <Route path='/login' component={Login} />
                 <Route path='/dashboard' component={Dashboard} />
+                <Route path='/dish' component={Dish} />
+                <Route path='/cart' component={Cart} />
+                <Route path='/profile' component={Profile} />
               </Switch>
             </div>
           </Router>
