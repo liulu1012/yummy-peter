@@ -1,6 +1,7 @@
 let defaultAppState = {
   showAlert : false,
-  alertMsg :''
+  alertMsg :'',
+  num:0
 }
 
 export default function appReducer(state=defaultAppState,action){

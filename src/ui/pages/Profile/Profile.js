@@ -26,19 +26,7 @@ class Profile extends React.Component{
           </div>
         </div>
         <div className='profile-attention-wrap'>
-          <div className='profile-attention-card'>
-            <div>
-              <img src='http://media.haoduoshipin.com/yummy/default-avatar.png' alt='avtar'/>
-              <span>liu</span>
-            </div>
-            <div>
-              <div>
-                zujian
-              </div>
-            </div>
-          </div>
-          <div className='profile-attention-card'>zhang</div>
-          <div className='profile-attention-card'>wang</div>
+          <Attention />
         </div>
       </div>
     )
