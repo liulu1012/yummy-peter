@@ -14,17 +14,28 @@ class Sidebar extends React.Component{
       isOpen:false
     })
   }
+  logout = () => {
+    localStorage.removeItem('userId')
+    this.props.dispatch({type:'LOG_OUT'})
+  }
   render(){
     // console.log(this.props)
     let authStr = (
-      <div>登陆|注册</div>
+      <div>
+        <Link to='/signup' onClick={this.closeBmMenu} className='bm-user-left'>
+          注册
+        </Link>
+        <Link to='/login' onClick={this.closeBmMenu} className='bm-user-right'>
+          登录
+        </Link>
+      </div>
     )
     let userinfo = (
       <div>
         <Link to='' className='bm-user-left'>
           {this.props.currentUser}
         </Link>
-        <Link to='' className='bm-user-right'>
+        <Link to='' className='bm-user-right' onClick={this.logout}>
           退出
         </Link>
       </div>
