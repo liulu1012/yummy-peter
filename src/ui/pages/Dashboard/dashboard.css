@@ -9,7 +9,6 @@
 }
 
 .dashboard .feed-item{
-	min-height: 200px;
 	margin: 20px;
 	background: #FFFFFF;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.21)
@@ -18,6 +17,7 @@
 .dashboard .feed-item-header{
 	display: flex;
 	justify-content: space-between;
+	margin-left: 20px;
 }
 
 .dashboard .feed-user img{
@@ -25,6 +25,8 @@
 	height: 50px;
 	border-radius: 50%;
 	margin-right:18px;
+	margin-left: 10px;
+	margin-bottom: 18px;
 }
 
 .dashboard .feed-user .feed-user-name{

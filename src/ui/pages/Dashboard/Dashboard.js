@@ -4,6 +4,17 @@ import './dashboard.css'
 import svg from './comment.svg'
 
 class Dashboard extends React.Component{
+  imgUrl1 = 'http://media.haoduoshipin.com/yummy/dishes/dish3.jpg'
+  imgUrl2 = 'http://media.haoduoshipin.com/yummy/dishes/dish1.jpg'
+  styles = {
+    dishImg : {
+      'background' :  `url(${this.imgUrl1}) no-repeat center center`,
+      'height' : '130px',
+      'width':'90%',
+      'margin':'0 auto',
+      'marginTop' : '20px'
+    }
+  }
 	render(){
 		return(
 			<div className='dashboard'>
@@ -26,6 +37,7 @@ class Dashboard extends React.Component{
                 <img src={svg} alt='comment' />
               </div>
             </div>
+            <div style={this.styles.dishImg} className='feed-item-dish'></div>
           </div>
 				</div>
 			</div>
