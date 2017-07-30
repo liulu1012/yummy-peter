@@ -13,7 +13,7 @@ class Dashboard extends React.Component{
 	render(){
     const cardList = this.cards.map((c,index) => {
       return(
-        <FeedItem key={index} username={c.username} comment={c.commeng} />
+        <FeedItem key={index} username={c.username} comment={c.comment} />
       )
     })
 		return(

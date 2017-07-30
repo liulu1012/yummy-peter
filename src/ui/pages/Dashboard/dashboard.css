@@ -11,7 +11,10 @@
 .dashboard .feed-item{
 	margin: 20px;
 	background: #FFFFFF;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.21)
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.21);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 .dashboard .feed-item-header{
@@ -47,4 +50,16 @@
 .dashboard .feed-comment-btn{
 	width: 20px;
 	margin-right:15px
+}
+.feed-item-dish{
+	margin-bottom:20px;
+	border:1px solid green;
+}
+.feed-item-commentBox{
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	line-height: 50px;
+	background: pink;
+	margin-top:-20px;
 }

@@ -44,7 +44,7 @@ class Sidebar extends React.Component{
       <div className='sidebar'>
         <Menu isOpen={this.state.isOpen}>
           <div className='bm-user-info'>
-            <img src='http://media.haoduoshipin.com/yummy/default-avatar.png' alt='userinfo' />
+            <Link to='/profile'><img src='http://media.haoduoshipin.com/yummy/default-avatar.png' alt='userinfo' onClick={this.closeBmMenu}/></Link>
             <div className='bm-user-auth'>
               {this.props.isAuthenticated ? userinfo : authStr}
             </div>
