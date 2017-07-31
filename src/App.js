@@ -30,6 +30,12 @@ class App extends React.Component{
           store.dispatch({type:'SIGN_IN',username:res.data.user.username})
         })
     }
+    //LOAD_DISH
+    axios.get(`${Settings.host}/dishes`)
+      .then(res=>{
+        const {dishes} = res.data
+        store.dispatch({type:'LOAD_DISH',dishes})
+      })
   }
   render(){
     return(
@@ -47,7 +53,7 @@ class App extends React.Component{
                 <Route path='/signup'  component={Signup} />
                 <Route path='/login' component={Login} />
                 <Route path='/dashboard' component={Dashboard} />
-                <Route path='/dish' component={Dish} />
+                <Route path='/dish/:dishId' component={Dish} />
                 <Route path='/cart' component={Cart} />
                 <Route path='/profile' component={Profile} />
               </Switch>
