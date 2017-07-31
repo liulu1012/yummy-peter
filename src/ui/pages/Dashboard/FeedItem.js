@@ -1,49 +1,34 @@
 import React from 'react'
 import svg from './comment.svg'
+import CommentIcon from '../../icons/CommentIcon'
+import {Link} from 'react-router-dom'
 
 class FeedItem extends React.Component{
-  imgUrl1 = 'http://media.haoduoshipin.com/yummy/dishes/dish3.jpg'
-  imgUrl2 = 'http://media.haoduoshipin.com/yummy/dishes/dish1.jpg'
-  styles = {
-    dishImg : {
-      'background' :  `url(${this.imgUrl1}) no-repeat center center`,
-      'height' : '130px',
-      'width':'90%',
-      'margin':'0 auto',
-      'marginTop' : '20px',
-    }
-  }
-  state = {
-    show:false
-  }
-  showComment = () => {
-    console.log(this.state.show)
-    this.setState({show:!this.state.show})
-  }
   render(){
-    console.log(this.props)
     return(
-      <div>
-        <div className='feed-item'>
-          <div className='feed-item-header'>
+      <div className='feed-item expand'>
+        <div className='feed-expand'>
+          评论内容
+        </div>
+        <div className='feed-card'>
+          <div className='feed-card-header'>
             <div className='feed-user'>
               <img src='http://media.haoduoshipin.com/yummy/default-avatar.png' alt='avtar'/>
-              <div className='feed-user-name-wrap'>
-                <div className='feed-user-name'>
-                  {this.props.username}
+              <div className='feed-user-info'>
+                <div className='feed-username'>
+                  liulu
                 </div>
-                <div className='feed-user-time'>
-                  2017nian7yue
+                <div className='feed-time'>
+                  2017
                 </div>
               </div>
             </div>
-            <div className='feed-comment-btn'>
-              <img src={svg} alt='comment' onClick={this.showComment}/>
+            <div className='feed-button'>
+              <CommentIcon color={'#fe5196'} />
             </div>
           </div>
-          <div style={this.styles.dishImg} className='feed-item-dish'></div>
+          <Link style={{'backgroundImage':`url(http://media.haoduoshipin.com/yummy/dishes/dish1.jpg)`}} to={`/dish/`} className='feed-dish'></Link>
         </div>
-        <div style={{display:this.state.show?'block':'none'}} className='feed-item-commentBox'>{this.props.comment}</div>
       </div>
     )
   }
