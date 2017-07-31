@@ -4,9 +4,15 @@ import CommentIcon from '../../icons/CommentIcon'
 import {Link} from 'react-router-dom'
 
 class FeedItem extends React.Component{
+  state = {
+    expand:false
+  }
+  toggleExpand = () => {
+    this.setState({expand:!this.state.expand})
+  }
   render(){
     return(
-      <div className='feed-item expand'>
+      <div className={`feed-item ${this.state.expand  ? 'expand' : ''}`}>
         <div className='feed-expand'>
           评论内容
         </div>
@@ -23,8 +29,8 @@ class FeedItem extends React.Component{
                 </div>
               </div>
             </div>
-            <div className='feed-button'>
-              <CommentIcon color={'#fe5196'} />
+            <div className='feed-button' onClick={this.toggleExpand}>
+              <CommentIcon color={this.state.expand?'#FE5196':'#D0D0D0'} />
             </div>
           </div>
           <Link style={{'backgroundImage':`url(http://media.haoduoshipin.com/yummy/dishes/dish1.jpg)`}} to={`/dish/`} className='feed-dish'></Link>
