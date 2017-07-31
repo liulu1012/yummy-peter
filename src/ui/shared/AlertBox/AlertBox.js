@@ -28,8 +28,8 @@ class AlertBox extends React.Component{
 }
 
 const mapStateToProps = (state) => ({
-  showAlert : state.app.showAlert,
-  alertMsg : state.app.alertMsg
+  showAlert : state.account.showAlert,
+  alertMsg : state.account.alertMsg
 })
 
 export default connect(mapStateToProps)(AlertBox)
